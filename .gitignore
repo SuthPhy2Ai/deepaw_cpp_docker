@@ -1,16 +1,4 @@
-# 容器镜像 tar 包（太大，不适合 Git）
-*.tar
-*.tar.gz
-
-# archive 目录（旧文件，不需要版本控制）
-archive/
-
-# 推理输出文件
-output/
-
-# Python 缓存
-__pycache__/
-*.pyc
-
-# Claude Code 配置
+*
+!DeePAW deployment/
 .claude/
+output/

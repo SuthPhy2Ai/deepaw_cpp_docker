@@ -1,10 +1,10 @@
 #!/bin/bash
-# DeePAW 一键启动脚本
-# 用法: ./start.sh [可选: 挂载的数据目录]
+# DeePAW Container Launch Script
+# Usage: ./start.sh [optional: data directory to mount]
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-DRIVER_VER=$(cat /sys/module/nvidia/version 2>/dev/null || echo "525.60.13")
-DATA_DIR="${1:-/home/sutianhao/data/podman/to8022/ckp/deepaw_iso/deepaw/rep_sub_model/check_pred_MP/asedb}"
+DRIVER_VER=$(cat /sys/module/nvidia/version 2>/dev/null || { echo "Error: NVIDIA driver not found. Please ensure NVIDIA driver is installed." >&2; exit 1; })
+DATA_DIR="${1:-/data}"
 OUTPUT_DIR="${SCRIPT_DIR}/output"
 
 mkdir -p "$OUTPUT_DIR"
